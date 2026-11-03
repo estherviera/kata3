@@ -1,7 +1,8 @@
 package software.ulpgc.katas;
+import com.google.gson.Gson;
 
 public class Main {
-    static void main() {
-
+    public static  void main(String[] args) {
+        Gson gson = new Gson();
     }
 }
