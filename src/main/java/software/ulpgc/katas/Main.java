@@ -1,8 +1,11 @@
 package software.ulpgc.katas;
 import com.google.gson.Gson;
+import software.ulpgc.katas.adapters.JsonRandomUserReader;
 
 public class Main {
     public static  void main(String[] args) {
-        Gson gson = new Gson();
+        JsonRandomUserReader reader = new JsonRandomUserReader();
+        reader.read();
+
     }
 }
