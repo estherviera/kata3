@@ -19,28 +19,55 @@ La práctica permite reforzar la separación de responsabilidades mediante una a
 - Git y GitHub para el control de versiones.
 - API HTTP de Java para obtener datos externos.
 - Biblioteca JSON utilizada en el proyecto (pendiente de confirmar).
-
 ## 3. Estructura del proyecto
 
-El código está organizado dentro del paquete `software.ulpgc.katas`, siguiendo una separación de responsabilidades basada en el modelo hexagonal.
+El proyecto está organizado dentro del paquete `software.ulpgc.katas`, siguiendo una arquitectura hexagonal que permite separar el modelo de dominio, las interfaces y los adaptadores externos.
 
-### `software.ulpgc.katas.domain.model`
+### Organización de paquetes
 
-- **User:** clase que representa a un usuario mediante los atributos necesarios para almacenar su información, independientemente del origen de los datos.
+```text
+software.ulpgc.katas
+│
+├── domain
+│   └── model
+│       └── User.java
+│
+├── ports
+│   └── UserReader.java
+│
+└── adapters
+    ├── UserDto.java
+    └── JsonRandomUserReader.java
+```
 
-### `software.ulpgc.katas.ports`
+### Descripción de los componentes
 
-- **UserReader:** interfaz que define el contrato para obtener los usuarios, permitiendo separar la lógica del dominio de la forma en la que se leen los datos.
+| Paquete | Clase | Responsabilidad |
+|---|---|---|
+| `domain.model` | `User` | Representa al usuario mediante sus atributos, independientemente del origen de los datos. |
+| `ports` | `UserReader` | Define la interfaz para obtener usuarios sin depender de una implementación concreta. |
+| `adapters` | `UserDto` | Representa los datos recibidos en JSON desde la API. |
+| `adapters` | `JsonRandomUserReader` | Realiza la petición HTTP a Random User para obtener los datos de los usuarios. |
 
-### `software.ulpgc.katas.adapters`
+### Funcionamiento general
 
-- **UserDto:** clase utilizada para representar los datos recibidos en formato JSON, incluyendo información como el nombre, la ubicación, el correo electrónico y la fecha de nacimiento.
-- **JsonRandomUserReader:** clase encargada de realizar una petición HTTP a la API Random User para obtener los datos de los usuarios.
+```text
+       API Random User
+              │
+              ▼
+    JsonRandomUserReader
+       (Obtiene datos)
+              │
+              ▼
+           UserDto
+     (Representa el JSON)
+              │
+              ▼
+            User
+     (Objeto de dominio)
+```
 
-### Transformación y serialización
-
-La aplicación debe transformar los datos externos en objetos de dominio y generar una salida JSON válida que incluya una colección de registros y un bloque de metadatos o resumen.
-
+La interfaz `UserReader` establece el contrato que utiliza `JsonRandomUserReader` para obtener los usuarios, manteniendo separadas las responsabilidades del proyecto.
 ## 4. Compilación y ejecución
 
 ### Requisitos
