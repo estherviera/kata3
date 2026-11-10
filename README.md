@@ -98,13 +98,8 @@ https://randomuser.me/api/?results=5
 
 Los datos obtenidos deben procesarse y transformarse para generar una representación JSON estructurada.
 
-## 5. Repetición de la kata
 
-El enunciado establece que la kata debe repetirse al menos tres veces, manteniendo el mismo objetivo y una estructura general equivalente.
-
-**Pendiente de documentar:** las repeticiones realizadas, los commits correspondientes y las pequeñas variaciones introducidas.
-
-## 6. Verificación
+## 5. Verificación
 
 Para comprobar el correcto funcionamiento de la aplicación, se deben verificar los siguientes casos:
 
@@ -114,10 +109,7 @@ Para comprobar el correcto funcionamiento de la aplicación, se deben verificar 
 - Generación de JSON válido.
 - Comprobación de que el JSON generado puede volver a interpretarse correctamente.
 
-**Pendiente:** incorporar un ejemplo de entrada, la salida JSON esperada y los resultados reales de las pruebas.
-
-## 7. Vídeo explicativo
+## 6. Vídeo explicativo
 
 **Vídeo de la kata:** https://youtu.be/Oakrmc_Z9II
 
-El vídeo tendrá una duración máxima de 7 minutos y mostrará el funcionamiento de la aplicación, la estructura del proyecto, el proceso de transformación de los datos y las comprobaciones realizadas.
