@@ -118,6 +118,6 @@ Para comprobar el correcto funcionamiento de la aplicación, se deben verificar 
 
 ## 7. Vídeo explicativo
 
-**Vídeo de la kata:** FALTA EL ENLACE
+**Vídeo de la kata:** https://youtu.be/Oakrmc_Z9II
 
 El vídeo tendrá una duración máxima de 7 minutos y mostrará el funcionamiento de la aplicación, la estructura del proyecto, el proceso de transformación de los datos y las comprobaciones realizadas.
